@@ -1,0 +1,150 @@
+" -- display -------------------------------------------------------------------
+
+"if exists("+colorcolumn")
+"  set colorcolumn=81          " display a marker after column 80
+"endif
+
+set ic " ignore case
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'The-NERD-Tree'
+Plugin 'ctags.vim'
+Plugin 'cscope.vim'
+Plugin 'chazy/cscope_maps'
+" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Tagbar'
+Plugin 'AutoComplPop'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'edkolev/promptline.vim'
+" Plugin 'edkolev/tmuxline.vim'
+Plugin 'a.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+Plugin 'ag.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+set laststatus=2 " enable status bar when only single file is opened
+
+" airline-themes
+let g:airline_theme='wombat'
+
+" gitgutter
+" let g:gitgutter_max_signs=10000
+
+" 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+" let g:cpp_experimental_simple_template_highlight = 1
+" let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+
+" cscope
+if has("cscope") && filereadable("/usr/bin/cscope")
+   set csprg=/usr/bin/cscope
+   set csto=0
+   set cst
+   set nocsverb
+   " add any database in current directory
+   if filereadable("cscope.out")
+      cs add cscope.out
+   " else add database pointed to by environment
+   elseif $CSCOPE_DB != ""
+      cs add $CSCOPE_DB
+   endif
+   set csverb
+endif
+
+" ctags
+set tags=tags;\
+
+" Tagbar
+noremap <leader>tb :TagbarToggle<CR>
+" NERDTree
+noremap <leader>nd :NERDTreeToggle<CR>
+" git-gutter
+noremap <leader>bb :Gblame<CR>
+" A
+noremap <leader>a :A<CR>
+noremap <leader>A :AV<CR>
+" buffer
+set hidden
+nmap <leader>T :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+" clang-format
+map <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
+imap <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
+
+function Blame() range
+    execute '!git blame -L ' . a:firstline . ',' . a:lastline . ' %'
+endfunction
+
+vnoremap b :call Blame()<CR>
+
+filetype plugin on
+
+" ag
+set runtimepath^=~/.vim/bundle/ag
+
+if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    "let g:ctrlp_use_caching = 0
+endif
+
+let g:ag_prg="/usr/local/bin/ag --column"
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" scheme
+hi PreProc ctermfg=magenta
+set background=dark
+set gfn=Lucida_Sans_Typewriter:h12:cANSI
+colorscheme desert

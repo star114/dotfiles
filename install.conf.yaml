@@ -1,0 +1,18 @@
+- link:
+    ~/Brewfile: Brewfile
+    ~/.bash: bash
+    ~/.bashrc: bashrc
+    ~/.config: config
+    ~/.gdbinit: gdbinit
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.inputrc: inputrc
+    ~/.profile: profile
+    ~/.screenrc: screenrc
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf.local: tmux.conf.local
+    ~/.vimrc: vimrc
+    ~/.vimrc.local: vimrc.local
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --remote, Upgrading submodules]
