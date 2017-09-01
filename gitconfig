@@ -6,7 +6,7 @@
 	filemode = false
 	excludesfile = ~/.gitignore_global
 [user]
-	name = Heesik Shin
-	email = start114.shin@gmail.com
+	name = Shin Heesik
+	email = sinheesik@gmail.com
 [color]
 	ui = true
