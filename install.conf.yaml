@@ -11,6 +11,7 @@
     ~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
+    ~/tool: tool
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
 - shell:
