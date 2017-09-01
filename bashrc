@@ -1,8 +1,11 @@
 if [ -f ~/.bashrc.local ]; then
-    source ~/bashrc.local
+    source ~/.bashrc.local
 fi
 
-alias ls='gls --color=auto'
+alias ls='ls --color'
+if [ -f /usr/local/bin/gls ]; then
+    alias ls='gls --color=auto'
+fi
 alias l='ls -lah'
 alias h=history
 alias cdsrc="cd ~/workspace"
@@ -22,23 +25,24 @@ export PATH=/usr/local/bin:$PATH
 LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:"${LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH
 
-__pyenv_version_ps1() {
-  local ret=$?;
-  output=$(pyenv local 2> /dev/null)
-  if [[ ! -z $output ]]; then
-    echo -n "($output)"
-  fi
-  return $ret;
-}
-
-PS1="\$(__pyenv_version_ps1)${PS1}"
-
 #pyenv autoenv
 #export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-source /usr/local/opt/autoenv/activate.sh
+if [ -f /usr/local/bin/pyenv ]; then
+    __pyenv_version_ps1() {
+    local ret=$?;
+    output=$(pyenv local 2> /dev/null)
+    if [[ ! -z $output ]]; then
+        echo -n "($output)"
+    fi
+    return $ret;
+    }
+
+    PS1="\$(__pyenv_version_ps1)${PS1}"
+    export PYENV_ROOT=/usr/local/var/pyenv
+    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+    if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+    source /usr/local/opt/autoenv/activate.sh
+fi
 
 #google
 #export PATH=/usr/local/google/depot_tools:$PATH
@@ -74,6 +78,8 @@ alias xcode-select-recent="sudo xcode-select -s /Applications/Xcode.app/Contents
 alias xcode-select-8.2="sudo xcode-select -s /Applications/Xcode_8.2.app/Contents/Developer"
 
 #bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f /usr/local/bin/brew ]; then
+#    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#        . $(brew --prefix)/etc/bash_completion
+#    fi
+#fi
