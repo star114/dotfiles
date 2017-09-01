@@ -1,9 +1,11 @@
+if [ -f ~/.bashrc.local ]; then
+    source ~/bashrc.local
+fi
+
 alias ls='gls --color=auto'
 alias l='ls -lah'
 alias h=history
 alias cdsrc="cd ~/workspace"
-alias sshhome="ssh star114shin.iptime.org -p10022"
-alias moshhome="mosh star114@star114shin.iptime.org --ssh=\"ssh -p 10022\""
 alias cformat="/usr/local/bin/clang-format"
 
 #git-aware-prompt
@@ -34,7 +36,6 @@ source /usr/local/opt/autoenv/activate.sh
 
 #homebrew
 export PATH=/usr/local/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN="0c74469a925d7ec540a04d2f1abdaa1abd2c39bc"
 
 #google
 #export PATH=/usr/local/google/depot_tools:$PATH
