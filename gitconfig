@@ -1,5 +1,7 @@
 [alias]
 	lg = log --color --graph --abbrev-commit\n           --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'
+	cloner = clone --recursive
+	log = log --de
 [core]
 	editor = /usr/local/bin/vim
 	autocrlf = input
