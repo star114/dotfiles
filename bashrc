@@ -16,6 +16,12 @@ source "${GITAWAREPROMPT}/main.sh"
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=xterm-256color
+
+# local path
+export PATH=/usr/local/bin:$PATH
+LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:"${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH
+
 __pyenv_version_ps1() {
   local ret=$?;
   output=$(pyenv local 2> /dev/null)
@@ -33,9 +39,6 @@ export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 source /usr/local/opt/autoenv/activate.sh
-
-#homebrew
-export PATH=/usr/local/bin:$PATH
 
 #google
 #export PATH=/usr/local/google/depot_tools:$PATH

@@ -10,3 +10,9 @@
 	email = sinheesik@gmail.com
 [color]
 	ui = true
+[merge]
+	conflictstyle = diff3
+[rerere]
+	enabled = true
+[push]
+	default = matching
