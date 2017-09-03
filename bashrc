@@ -78,8 +78,8 @@ alias xcode-select-recent="sudo xcode-select -s /Applications/Xcode.app/Contents
 alias xcode-select-8.2="sudo xcode-select -s /Applications/Xcode_8.2.app/Contents/Developer"
 
 #bash-completion
-#if [ -f /usr/local/bin/brew ]; then
-#    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#        . $(brew --prefix)/etc/bash_completion
-#    fi
-#fi
+if [ -f /usr/local/bin/brew ]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+fi
