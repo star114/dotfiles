@@ -1,7 +1,3 @@
-if [ -f ~/.bashrc.local ]; then
-    source ~/.bashrc.local
-fi
-
 alias ls='ls --color'
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
@@ -24,6 +20,9 @@ export TERM=xterm-256color
 export PATH=/usr/local/bin:$PATH
 LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:"${LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH
+
+# gcc colors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 #pyenv autoenv
 #export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -82,4 +81,8 @@ if [ -f /usr/local/bin/brew ]; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
+fi
+
+if [ -f ~/.bashrc.local ]; then
+    source ~/.bashrc.local
 fi
