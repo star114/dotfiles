@@ -3,7 +3,7 @@
 	cloner = clone --recursive
 	log = log --de
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 	autocrlf = input
 	filemode = false
 	excludesfile = ~/.gitignore_global
