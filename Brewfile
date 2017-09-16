@@ -100,7 +100,6 @@ cask "android-studio-canary"
 cask "bartender"
 cask "beardedspice"
 cask "bettertouchtool"
-cask "cheatsheet"
 cask "cuda"
 cask "dragand"
 cask "eclipse-java"
@@ -108,7 +107,6 @@ cask "eve"
 cask "evernote"
 cask "firefox"
 cask "flume"
-cask "github-desktop"
 cask "goofy"
 cask "google-chrome"
 cask "google-photos-backup-and-sync"
@@ -157,8 +155,10 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PDF Expert", id: 1055273043
 mas "Polarr Photo Editor", id: 1058273036
+mas "Privatus", id: 1192172763
 mas "Shazam", id: 897118787
-mas "The Unarchiver", id: 425424353
 mas "Things3", id: 904280696
+mas "Trello", id: 1278508951
+mas "UltraPasteboard", id: 1227289684
 mas "WeBlog", id: 1242308270
 mas "Xcode", id: 497799835
