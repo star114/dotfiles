@@ -1,9 +1,10 @@
+- shell:
+    - [mkdir -p ~/.config]
 - link:
     ~/Brewfile: Brewfile
     ~/.bash: bash
     ~/.bashrc: bashrc
-    ~/.config: config
-    ~/.gdbinit: gdbinit
+    ~/.config/karabiner: config/karabiner
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc

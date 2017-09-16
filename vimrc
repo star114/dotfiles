@@ -115,9 +115,9 @@ endif
 cabbrev w!! w !sudo tee % >/dev/null
 
 " CTRL+A moves to start of line in command mode
-cnoremap <C-e> <home>
+" cnoremap <C-e> <home>
 " CTRL+E moves to end of line in command mode
-cnoremap <C-e><C-e> <end>
+" cnoremap <C-e><C-e> <end>
 
 " CTRL+C closes the command window
 if has("autocmd")

@@ -4,7 +4,6 @@ if [ -f /usr/local/bin/gls ]; then
 fi
 alias l='ls -lah'
 alias h=history
-alias cdsrc="cd ~/workspace"
 alias cformat="/usr/local/bin/clang-format"
 
 #git-aware-prompt
