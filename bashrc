@@ -60,20 +60,12 @@ export PATH=/usr/local/opt/qt/bin:$PATH
 #mono
 export MONO_GAC_PREFIX="/usr/local"
 
-#cuda 8.0
-export PATH=/Developer/NVIDIA/CUDA-8.0/bin:$PATH
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib:$DYLD_LIBRARY_PATH
-
 #llvm
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 #coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-#alias for xcode-select
-alias xcode-select-recent="sudo xcode-select -s /Applications/Xcode.app/Contents/Developer"
-alias xcode-select-8.2="sudo xcode-select -s /Applications/Xcode_8.2.app/Contents/Developer"
 
 #bash-completion
 if [ -f /usr/local/bin/brew ]; then
