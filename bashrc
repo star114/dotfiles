@@ -79,3 +79,7 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f ~/.bashrc.fzf ]; then
+    source ~/.bashrc.fzf
+fi
