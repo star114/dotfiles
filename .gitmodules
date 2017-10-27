@@ -7,3 +7,6 @@
 [submodule "MacOsSafariExtensions"]
 	path = MacOsSafariExtensions
 	url = https://github.com/star114/MacOsSafariExtensions.git
+[submodule "gdb-dashboard"]
+	path = gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard.git

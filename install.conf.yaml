@@ -6,6 +6,8 @@
     ~/.bashrc: bashrc
     ~/.bashrc.fzf: bashrc.fzf
     ~/.config/karabiner: config/karabiner
+    ~/.gdbinit: gdbinit
+    ~/.gdbinit.dashboard: gdb-dashboard/.gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
