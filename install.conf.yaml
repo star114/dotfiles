@@ -1,4 +1,6 @@
 - shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --remote, Upgrading submodules]
     - [mkdir -p ~/.config]
 - link:
     ~/Brewfile: Brewfile
@@ -18,6 +20,3 @@
     ~/tool: tool
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [git submodule update --init --remote, Upgrading submodules]
