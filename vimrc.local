@@ -149,7 +149,9 @@ set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 
 " scheme
-hi PreProc ctermfg=magenta
-set background=dark
-set gfn=Lucida_Sans_Typewriter:h12:cANSI
+"hi PreProc ctermfg=magenta
+"set background=dark
+"set gfn=Lucida_Sans_Typewriter:h12:cANSI
+set gfn=DejaVu_Sans_Mono:h12
 colorscheme desert
+"colorscheme peachpuff
