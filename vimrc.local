@@ -152,6 +152,13 @@ set rtp+=~/.fzf
 "hi PreProc ctermfg=magenta
 "set background=dark
 "set gfn=Lucida_Sans_Typewriter:h12:cANSI
-set gfn=DejaVu_Sans_Mono:h12
+"set gfn=DejaVu_Sans_Mono:h12
+set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+   endif
+endif
 colorscheme desert
 "colorscheme peachpuff
