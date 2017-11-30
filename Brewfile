@@ -1,6 +1,7 @@
 tap "buo/cask-upgrade"
 tap "homebrew/core"
 tap "homebrew/versions"
+tap "homebrew/binary"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "caskroom/drivers"
@@ -10,9 +11,10 @@ tap "caskroom/cask"
 tap "caskroom/eid"
 tap "vitorgalvao/tiny-scripts"
 cask "java"
+cask "xquartz"
 brew "aalib"
 brew "docbook"
-brew "asciidoc", args: ["with-docbook-xsl"]
+brew "asciidoc"
 brew "freetype"
 brew "fontconfig"
 brew "gettext"
@@ -30,6 +32,7 @@ brew "bash-completion"
 brew "bazel"
 brew "boost"
 brew "ccache", args: ["HEAD"]
+brew "cgdb"
 brew "clang-format"
 brew "cmake"
 brew "coreutils"
@@ -39,6 +42,7 @@ brew "ctags"
 brew "curl"
 brew "dbus", restart_service: true
 brew "docbook-xsl"
+brew "fzf"
 brew "gmp"
 brew "isl"
 brew "mpfr"
@@ -55,8 +59,8 @@ brew "gradle"
 brew "gsettings-desktop-schemas"
 brew "icu4c"
 brew "hicolor-icon-theme"
-brew "openssl"
 brew "gtk+"
+brew "openssl"
 brew "xz"
 brew "python3"
 brew "gtk+3"
@@ -92,15 +96,21 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "wget"
+brew "wxpython"
+brew "youtube-dl"
 brew "vitorgalvao/tiny-scripts/cask-repair"
 cask "1password"
 cask "alfred"
 cask "bartender"
 cask "bettertouchtool"
-cask "cuda"
+cask "betterzipql"
+cask "beyond-compare"
+cask "boom-3d"
+cask "cloudapp"
 cask "cuda-z"
+cask "cyberduck"
+cask "daisydisk"
 cask "dropzone"
-cask "eve"
 cask "evernote"
 cask "firefox"
 cask "flume"
@@ -113,24 +123,38 @@ cask "kdiff3"
 cask "keepingyouawake"
 cask "keka"
 cask "kindle"
+cask "macvim"
 cask "musixmatch"
 cask "onedrive"
 cask "paste"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlprettypatch"
+cask "qlstephen"
+cask "qlvideo"
 cask "qt-creator"
+cask "quicklook-csv"
+cask "quicklook-json"
+cask "quicklookase"
 cask "skype-for-business"
 cask "slack"
 cask "spotify"
+cask "suspicious-package"
 cask "synergy"
 cask "transmission-remote-gui"
 cask "visual-studio-code"
 cask "vlc"
+cask "webpquicklook"
 cask "whatsapp"
 cask "wireshark"
+cask "caskroom/drivers/nvidia-cuda"
 cask "caskroom/drivers/nvidia-web-driver"
+cask "caskroom/versions/airmail-beta"
 mas "Affinity Photo", id: 824183456
 mas "AutoMute", id: 1118136179
-mas "Commander One PRO", id: 1035237815
-mas "Disk Care", id: 913724705
+mas "Blinks", id: 998804308
+mas "EasyRes", id: 688211836
 mas "GarageBand", id: 682658836
 mas "GIF Brewery 3", id: 1081413713
 mas "HwpMac2014VIEWER", id: 416746898
@@ -145,8 +169,9 @@ mas "Music Converter", id: 468990728
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PDF Expert", id: 1055273043
+mas "Quiver", id: 866773894
 mas "Shazam", id: 897118787
 mas "Things3", id: 904280696
 mas "Trello", id: 1278508951
-mas "WeBlog", id: 1242308270
+mas "Wallpaper Wizard", id: 1266674560
 mas "Xcode", id: 497799835
