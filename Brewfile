@@ -31,6 +31,9 @@ brew "bash"
 brew "bash-completion"
 brew "bazel"
 brew "boost"
+brew "icu4c"
+brew "node"
+brew "bower"
 brew "ccache", args: ["HEAD"]
 brew "cgdb"
 brew "clang-format"
@@ -57,7 +60,6 @@ brew "gnuplot"
 brew "go"
 brew "gradle"
 brew "gsettings-desktop-schemas"
-brew "icu4c"
 brew "hicolor-icon-theme"
 brew "gtk+"
 brew "openssl"
@@ -96,6 +98,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "wget"
+brew "wireshark"
 brew "wxpython"
 brew "youtube-dl"
 brew "vitorgalvao/tiny-scripts/cask-repair"
@@ -125,6 +128,7 @@ cask "keka"
 cask "kindle"
 cask "macvim"
 cask "musixmatch"
+cask "nwjs"
 cask "onedrive"
 cask "paste"
 cask "qlcolorcode"
@@ -141,20 +145,17 @@ cask "skype-for-business"
 cask "slack"
 cask "spotify"
 cask "suspicious-package"
-cask "synergy"
 cask "transmission-remote-gui"
 cask "visual-studio-code"
 cask "vlc"
 cask "webpquicklook"
 cask "whatsapp"
-cask "wireshark"
 cask "caskroom/drivers/nvidia-cuda"
 cask "caskroom/drivers/nvidia-web-driver"
 cask "caskroom/versions/airmail-beta"
 mas "Affinity Photo", id: 824183456
 mas "AutoMute", id: 1118136179
 mas "Blinks", id: 998804308
-mas "EasyRes", id: 688211836
 mas "GarageBand", id: 682658836
 mas "GIF Brewery 3", id: 1081413713
 mas "HwpMac2014VIEWER", id: 416746898
@@ -173,5 +174,4 @@ mas "Quiver", id: 866773894
 mas "Shazam", id: 897118787
 mas "Things3", id: 904280696
 mas "Trello", id: 1278508951
-mas "Wallpaper Wizard", id: 1266674560
 mas "Xcode", id: 497799835
