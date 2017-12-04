@@ -1,0 +1,41 @@
+# print spark launch command
+export SPARK_PRINT_LAUNCH_COMMAND=1
+
+# jenv
+export PATH="/Users/star114/.jenv/shims:${PATH}"
+source "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash"
+jenv rehash 2>/dev/null
+export JENV_LOADED=1
+unset JAVA_HOME
+jenv() {
+  typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}
+
+jenv8() {
+    jenv global 1.8
+    jenv rehash
+    jenv enable-plugin maven
+    jenv enable-plugin gradle
+    echo "Set default to Java 8"
+    java -version
+}
+jenv9() {
+    jenv global 9.0
+    jenv rehash
+    jenv enable-plugin maven
+    jenv enable-plugin gradle
+    echo "Set default to Java 9"
+    java -version
+}
+

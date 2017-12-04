@@ -23,25 +23,6 @@ export LD_LIBRARY_PATH
 # gcc colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-#pyenv autoenv
-#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if [ -f /usr/local/bin/pyenv ]; then
-    __pyenv_version_ps1() {
-    local ret=$?;
-    output=$(pyenv local 2> /dev/null)
-    if [[ ! -z $output ]]; then
-        echo -n "($output)"
-    fi
-    return $ret;
-    }
-
-    PS1="\$(__pyenv_version_ps1)${PS1}"
-    export PYENV_ROOT=/usr/local/var/pyenv
-    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-    if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-    source /usr/local/opt/autoenv/activate.sh
-fi
-
 #google
 #export PATH=/usr/local/google/depot_tools:$PATH
 
@@ -82,4 +63,8 @@ fi
 
 if [ -f ~/.bashrc.fzf ]; then
     source ~/.bashrc.fzf
+fi
+
+if [ -f ~/.bashrc.spark ]; then
+    source ~/.bashrc.spark
 fi
