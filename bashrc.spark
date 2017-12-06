@@ -39,3 +39,9 @@ jenv9() {
     java -version
 }
 
+# conda
+enconda() {
+    if [ -f /usr/local/anaconda3/bin/conda ]; then
+        export PATH=/usr/local/anaconda3/bin:"$PATH"
+    fi
+}
