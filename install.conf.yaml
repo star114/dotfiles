@@ -6,6 +6,7 @@
     ~/Brewfile: Brewfile
     ~/.bash: bash
     ~/.bashrc: bashrc
+    ~/.bashrc.brew: bashrc.brew
     ~/.bashrc.fzf: bashrc.fzf
     ~/.bashrc.spark: bashrc.spark
     ~/.config/karabiner: config/karabiner

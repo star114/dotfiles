@@ -1,0 +1,31 @@
+alias cformat="/usr/local/bin/clang-format"
+
+#google
+#export PATH=/usr/local/google/depot_tools:$PATH
+
+#go
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+
+#sqlite
+export PATH=/usr/local/opt/sqlite/bin:$PATH
+
+#curl
+export PATH=/usr/local/opt/curl/bin:$PATH
+
+#qt
+export PATH=/usr/local/opt/qt/bin:$PATH
+
+#mono
+export MONO_GAC_PREFIX="/usr/local"
+
+#llvm
+#export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+#coreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+#bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi

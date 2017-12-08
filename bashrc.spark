@@ -1,12 +1,16 @@
 # print spark launch command
-export SPARK_PRINT_LAUNCH_COMMAND=1
+ensparklog() {
+    export SPARK_PRINT_LAUNCH_COMMAND=1
+}
 
 # jenv
-export PATH="/Users/star114/.jenv/shims:${PATH}"
-source "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash"
-jenv rehash 2>/dev/null
-export JENV_LOADED=1
-unset JAVA_HOME
+if [ -f /usr/local/bin/jenv ]; then
+    export PATH="${HOME}/.jenv/shims:${PATH}"
+    [ -f "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash" ] && source "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash"
+    jenv rehash 2>/dev/null
+    export JENV_LOADED=1
+    unset JAVA_HOME
+fi
 jenv() {
   typeset command
   command="$1"
