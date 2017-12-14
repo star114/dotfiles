@@ -20,22 +20,20 @@ Plugin 'The-NERD-Tree'
 Plugin 'ctags.vim'
 Plugin 'cscope.vim'
 Plugin 'chazy/cscope_maps'
-" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Tagbar'
 Plugin 'AutoComplPop'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'edkolev/promptline.vim'
-" Plugin 'edkolev/tmuxline.vim'
 Plugin 'a.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'octol/vim-cpp-enhanced-highlight'
-
 Plugin 'ag.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -74,12 +72,6 @@ let g:airline_theme='wombat'
 " gitgutter
 " let g:gitgutter_max_signs=10000
 
-" 'octol/vim-cpp-enhanced-highlight'
-let g:cpp_class_scope_highlight = 1
-" let g:cpp_experimental_simple_template_highlight = 1
-" let g:cpp_experimental_template_highlight = 1
-let g:cpp_concepts_highlight = 1
-
 " cscope
 if has("cscope") && filereadable("/usr/bin/cscope")
    set csprg=/usr/bin/cscope
@@ -97,7 +89,7 @@ if has("cscope") && filereadable("/usr/bin/cscope")
 endif
 
 " ctags
-set tags=tags;\
+set tags=./tags,tags
 
 " Tagbar
 noremap <leader>tb :TagbarToggle<CR>
@@ -127,6 +119,15 @@ vnoremap <leader>b :call Blame()<CR>
 
 filetype plugin on
 
+" CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
 " ag
 set runtimepath^=~/.vim/bundle/ag
 
@@ -138,7 +139,7 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
     " ag is fast enough that CtrlP doesn't need to cache
-    "let g:ctrlp_use_caching = 0
+    let g:ctrlp_use_caching = 0
 endif
 
 let g:ag_prg="/usr/local/bin/ag --column"
@@ -161,5 +162,5 @@ if has("gui_running")
       set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
    endif
 endif
-colorscheme desert
-"colorscheme peachpuff
+"colorscheme desert
+colorscheme peachpuff

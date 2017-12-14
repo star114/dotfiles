@@ -133,7 +133,7 @@ endif
 set title       " change the terminal title
 set lazyredraw  " do not redraw when executing macros
 set report=0    " always report changes
-set cursorline  " highlight current line
+"set cursorline  " highlight current line
 
 if has("autocmd")
   augroup vim

@@ -1,6 +1,13 @@
 # print spark launch command
 ensparklog() {
     export SPARK_PRINT_LAUNCH_COMMAND=1
+    echo "success to enable spark log"
+}
+
+enspark() {
+    # maven options
+    export MAVEN_OPTS="-Xmx2g -XX:ReservedCodeCacheSize=512m"
+    echo "success to enable spark"
 }
 
 # jenv
@@ -48,4 +55,5 @@ enconda() {
     if [ -f /usr/local/anaconda3/bin/conda ]; then
         export PATH=/usr/local/anaconda3/bin:"$PATH"
     fi
+    echo "success to enable conda"
 }

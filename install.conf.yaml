@@ -2,6 +2,7 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [git submodule update --init --remote, Upgrading submodules]
     - [mkdir -p ~/.config]
+    - [mkdir -p ~/.vim/bundle]
 - link:
     ~/Brewfile: Brewfile
     ~/.bash: bash
@@ -22,3 +23,4 @@
     ~/tool: tool
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
+    ~/.vim/bundle/Vundle.vim: Vundle.vim
