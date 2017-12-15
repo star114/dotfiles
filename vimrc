@@ -1,3 +1,9 @@
+" --user defined ---------------------------------------------------------------
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
 " -- bootstrap -----------------------------------------------------------------
 
 set encoding=utf-8  " set vim encoding to UTF-8
@@ -758,11 +764,4 @@ if has("autocmd")
     autocmd!
     "autocmd filetype vim setlocal spell " enabled when editing .vimrc
   augroup END
-endif
-
-
-" --user defined ---------------------------------------------------------------
-
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
 endif

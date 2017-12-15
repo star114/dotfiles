@@ -29,11 +29,15 @@ Plugin 'a.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'ag.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'star114/vim-cpp-enhanced-highlight'
+
+" vim scheme
+Plugin 'tomasiser/vim-code-dark'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -67,7 +71,7 @@ set laststatus=2 " enable status bar when only single file is opened
 set ttimeoutlen=50
 
 " airline-themes
-let g:airline_theme='wombat'
+let g:airline_theme='codedark'
 
 " gitgutter
 " let g:gitgutter_max_signs=10000
@@ -150,11 +154,25 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 
+" c++ enhanced highlight
+let g:cpp_class_scope_highlight = 1
+" Highlighting of member variables is disabled by default. To enable set
+let g:cpp_member_variable_highlight = 1
+" Highlighting of class names in declarations is disabled by default. To enable set
+let g:cpp_class_decl_highlight = 1
+" There are two ways to hightlight template functions. Either
+"let g:cpp_experimental_simple_template_highlight = 1
+" which works in most cases, but can be a little slow on large files. Alternatively set
+let g:cpp_experimental_template_highlight = 1
+" which is a faster implementation but has some corner cases where it doesn't work.
+" Note: C++ template syntax is notoriously difficult to parse, so don't expect this feature to be perfect.
+" Highlighting of library concepts is enabled by
+let g:cpp_concepts_highlight = 1
+" This will highlight the keywords concept and requires as well as all named requirements (like DefaultConstructible) in the standard library.
+" Highlighting of user defined functions can be disabled by
+" let g:cpp_no_function_highlight = 1
+
 " scheme
-"hi PreProc ctermfg=magenta
-"set background=dark
-"set gfn=Lucida_Sans_Typewriter:h12:cANSI
-"set gfn=DejaVu_Sans_Mono:h12
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
 if has("gui_running")
    let s:uname = system("uname")
@@ -163,4 +181,6 @@ if has("gui_running")
    endif
 endif
 "colorscheme desert
-colorscheme peachpuff
+"colorscheme peachpuff
+"colorscheme crayon
+colorscheme codedark
