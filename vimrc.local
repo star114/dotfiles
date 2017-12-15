@@ -33,8 +33,7 @@ Plugin 'ag.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'ntpeters/vim-better-whitespace'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'star114/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
