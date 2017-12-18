@@ -406,6 +406,12 @@ inoremap <silent> <leader>w <ESC>:w!<CR>
 nnoremap <silent> <leader>W :wa!<CR>
 inoremap <silent> <leader>W <ESC>:wa!<CR>
 
+" custom key bindings
+nmap <leader>T :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
 
 " -- navigation ----------------------------------------------------------------
 

@@ -68,27 +68,26 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 set laststatus=2 " enable status bar when only single file is opened
 set ttimeoutlen=50
-
-" airline-themes
 let g:airline_theme='codedark'
 
-" gitgutter
-" let g:gitgutter_max_signs=10000
-
 " cscope
-if has("cscope") && filereadable("/usr/bin/cscope")
-   set csprg=/usr/bin/cscope
-   set csto=0
-   set cst
-   set nocsverb
-   " add any database in current directory
-   if filereadable("cscope.out")
-      cs add cscope.out
-   " else add database pointed to by environment
-   elseif $CSCOPE_DB != ""
-      cs add $CSCOPE_DB
-   endif
-   set csverb
+if has("cscope") && executable("cscope") && (filereadable("/usr/local/bin/cscope") || filereadable("/usr/bin/cscope"))
+    if filereadable("/usr/local/bin/cscope")
+        set csprg=/usr/local/bin/cscope
+    elseif filereadable("/usr/bin/cscope")
+        set csprg=/usr/bin/cscope
+    endif
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+        " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
 endif
 
 " ctags
@@ -96,23 +95,23 @@ set tags=./tags,tags
 
 " Tagbar
 noremap <leader>tb :TagbarToggle<CR>
+
 " NERDTree
 noremap <leader>nd :NERDTreeToggle<CR>
+
 " git-gutter
+" let g:gitgutter_max_signs=10000
 noremap <leader>bb :Gblame<CR>
+
 " A
 noremap <leader>a :A<CR>
 noremap <leader>A :AV<CR>
-" buffer
-set hidden
-nmap <leader>T :enew<cr>
-nmap <leader>l :bnext<CR>
-nmap <leader>h :bprevious<CR>
-nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>
-" clang-format
-map <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
-imap <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
+
+if filereadable("/usr/local/share/clang/clang-format.py")
+    " clang-format
+    map <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
+    imap <leader>k :pyf /usr/local/share/clang/clang-format.py<cr>
+endif
 
 function Blame() range
     execute '!git blame -L ' . a:firstline . ',' . a:lastline . ' %'
@@ -134,7 +133,7 @@ let g:ctrlp_custom_ignore = {
 " ag
 set runtimepath^=~/.vim/bundle/ag
 
-if executable('ag')
+if executable('ag') && filereadable("/usr/local/bin/ag")
     " Use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor
 
@@ -143,11 +142,16 @@ if executable('ag')
 
     " ag is fast enough that CtrlP doesn't need to cache
     let g:ctrlp_use_caching = 0
+
+    let g:ag_prg="/usr/local/bin/ag --column"
+    "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
-let g:ag_prg="/usr/local/bin/ag --column"
-
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" rg
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --color=never
+    nnoremap K :grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>
+endif
 
 " fzf
 set rtp+=/usr/local/opt/fzf
