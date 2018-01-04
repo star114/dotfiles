@@ -139,7 +139,7 @@ endif
 set title       " change the terminal title
 set lazyredraw  " do not redraw when executing macros
 set report=0    " always report changes
-"set cursorline  " highlight current line
+set cursorline  " highlight current line
 
 if has("autocmd")
   augroup vim
@@ -152,54 +152,50 @@ if has("autocmd")
   augroup END
 endif
 
-" if has("gui_running")
-"   set cursorcolumn  " highlight current column
-" endif
+if has("gui_running")
+  set cursorcolumn  " highlight current column
+endif
 
-" if exists("+relativenumber")
-"   if v:version >= 400
-"     set number
-"   endif
-"   set relativenumber  " show relative line numbers
-"   set numberwidth=3   " narrow number column
-"   " cycles between relative / absolute / no numbering
-"   if v:version >= 400
-"     function! RelativeNumberToggle()
-"       if (&number == 1 && &relativenumber == 1)
-"         set nonumber
-"         set relativenumber relativenumber?
-"       elseif (&number == 0 && &relativenumber == 1)
-"         set norelativenumber
-"         set number number?
-"       elseif (&number == 1 && &relativenumber == 0)
-"         set norelativenumber
-"         set nonumber number?
-"       else
-"         set number
-"         set relativenumber relativenumber?
-"       endif
-"     endfunc
-"   else
-"     function! RelativeNumberToggle()
-"       if (&relativenumber == 1)
-"         set number number?
-"       elseif (&number == 1)
-"         set nonumber number?
-"       else
-"         set relativenumber relativenumber?
-"       endif
-"     endfunc
-"   endif
-"   nnoremap <silent> <leader>n :call RelativeNumberToggle()<CR>
-" else                  " fallback
-"   set number          " show line numbers
-"   " inverts numbering
-"   nnoremap <silent> <leader>n :set number! number?<CR>
-" endif
-
-set number "show line numbers
-" inverts numbering
-nnoremap <silent> <leader>n :set number! number?<CR>
+if exists("+relativenumber")
+  if v:version >= 400
+    set number
+  endif
+  set relativenumber  " show relative line numbers
+  set numberwidth=3   " narrow number column
+  " cycles between relative / absolute / no numbering
+  if v:version >= 400
+    function! RelativeNumberToggle()
+      if (&number == 1 && &relativenumber == 1)
+        set nonumber
+        set relativenumber relativenumber?
+      elseif (&number == 0 && &relativenumber == 1)
+        set norelativenumber
+        set number number?
+      elseif (&number == 1 && &relativenumber == 0)
+        set norelativenumber
+        set nonumber number?
+      else
+        set number
+        set relativenumber relativenumber?
+      endif
+    endfunc
+  else
+    function! RelativeNumberToggle()
+      if (&relativenumber == 1)
+        set number number?
+      elseif (&number == 1)
+        set nonumber number?
+      else
+        set relativenumber relativenumber?
+      endif
+    endfunc
+  endif
+  nnoremap <silent> <leader>n :call RelativeNumberToggle()<CR>
+else                  " fallback
+  set number          " show line numbers
+  " inverts numbering
+  nnoremap <silent> <leader>n :set number! number?<CR>
+endif
 
 set nolist                            " hide unprintable characters
 if has("multi_byte")                  " if multi_byte is available,
@@ -218,7 +214,8 @@ if has("autocmd")
 endif
 
 " inverts display of unprintable characters
-" nnoremap <silent> <leader>l :set list! list?<CR>
+nnoremap <silent> <leader>ll :set list! list?<CR>
+set list
 
 set noerrorbells      " shut up
 set visualbell t_vb=  " use visual bell instead of error bell
@@ -688,6 +685,7 @@ set wrapscan    " wrap around when searching
 set incsearch   " show match results while typing search pattern
 if (&t_Co > 2 || has("gui_running"))
   set hlsearch  " highlight search terms
+  highlight Search ctermfg=0 ctermbg=226 guifg=Black guibg=Yellow
 endif
 
 " temporarily disable highlighting when entering insert mode
@@ -699,9 +697,9 @@ if has("autocmd")
   augroup END
 endif
 set ignorecase  " case insensitive search
-set smartcase   " case insensitive only if search pattern is all lowercase
+" set smartcase   " case insensitive only if search pattern is all lowercase
                 "   (smartcase requires ignorecase)
-set gdefault    " search/replace globally (on a line) by default
+" set gdefault    " search/replace globally (on a line) by default
 
 " temporarily disable search highlighting
 nnoremap <silent> <leader><Space> :nohlsearch<CR>:match none<CR>:2match none<CR>:3match none<CR>
