@@ -35,6 +35,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+" clang-format
+Plugin 'rhysd/vim-clang-format'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -175,6 +177,19 @@ let g:cpp_concepts_highlight = 1
 " This will highlight the keywords concept and requires as well as all named requirements (like DefaultConstructible) in the standard library.
 " Highlighting of user defined functions can be disabled by
 " let g:cpp_no_function_highlight = 1
+
+" vim-clang-format
+let g:clang_format#code_style = "WebKit"
+let g:clang_format#style_options = {
+            \ "IndentCaseLabels" : "true",
+            \ "NamespaceIndentation" : "None",
+            \ "Standard" : "C++11"}
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
