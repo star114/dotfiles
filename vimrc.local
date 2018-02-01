@@ -104,7 +104,7 @@ noremap <leader>nd :NERDTreeToggle<CR>
 
 " git-gutter
 " let g:gitgutter_max_signs=10000
-noremap <leader>bb :Gblame<CR>
+noremap <leader>b :Gblame<CR>
 
 " A
 noremap <leader>a :A<CR>
@@ -120,7 +120,7 @@ function Blame() range
     execute '!git blame -L ' . a:firstline . ',' . a:lastline . ' %'
 endfunction
 
-vnoremap <leader>b :call Blame()<CR>
+vnoremap <leader>bb :call Blame()<CR>
 
 filetype plugin on
 
