@@ -22,8 +22,7 @@ Plugin 'cscope.vim'
 Plugin 'chazy/cscope_maps'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Tagbar'
-" too slow
-" Plugin 'AutoComplPop'
+Plugin 'AutoComplPop'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'a.vim'
@@ -189,7 +188,7 @@ let g:clang_format#style_options = {
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
+nmap <Leader>ca :ClangFormatAutoToggle<CR>
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10

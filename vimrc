@@ -580,18 +580,18 @@ noremap <silent> <F12> :call Preserve("%s/\\s\\+$//e")<CR>
 noremap <silent> <leader>$ :call Preserve("%s/<C-V><CR>//e")<CR>
 
 " use <leader>d to delete a line without adding it to the yanked stack
-nnoremap <silent> <leader>d "_d
-vnoremap <silent> <leader>d "_d
+" nnoremap <silent> <leader>d "_d
+" vnoremap <silent> <leader>d "_d
 
 " use <leader>c to replace text without yanking replaced text
-nnoremap <silent> <leader>c "_c
-vnoremap <silent> <leader>c "_c
+" nnoremap <silent> <leader>c "_c
+" vnoremap <silent> <leader>c "_c
 
 " yank/paste to/from the OS clipboard
-noremap <silent> <leader>y "+y
-noremap <silent> <leader>Y "+Y
-noremap <silent> <leader>p "+p
-noremap <silent> <leader>P "+P
+" noremap <silent> <leader>y "+y
+" noremap <silent> <leader>Y "+Y
+" noremap <silent> <leader>p "+p
+" noremap <silent> <leader>P "+P
 
 " paste without yanking replaced text in visual mode
 vnoremap <silent> p "_dP
