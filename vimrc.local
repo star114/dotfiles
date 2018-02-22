@@ -26,6 +26,8 @@ Plugin 'AutoComplPop'
 Plugin 'file:///usr/local/src/vim-plugins-local/vim-sap-hana-cpp-highlight'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'bling/vim-bufferline'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'a.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
@@ -35,8 +37,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-" clang-format
 Plugin 'rhysd/vim-clang-format'
+Plugin 'vim-syntastic/syntastic'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -66,9 +68,14 @@ filetype plugin indent on    " required
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#branch#enabled = 1
 set laststatus=2 " enable status bar when only single file is opened
 set ttimeoutlen=50
 let g:airline_theme='codedark'
@@ -190,6 +197,21 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>ca :ClangFormatAutoToggle<CR>
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" syntastic custom settings
+let g:syntastic_cpp_config_file = ".vim"
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10

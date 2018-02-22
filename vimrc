@@ -406,7 +406,7 @@ nnoremap <silent> <leader>W :wa!<CR>
 inoremap <silent> <leader>W <ESC>:wa!<CR>
 
 " custom key bindings
-nmap <leader>T :enew<cr>
+nmap <leader>t :enew<cr>
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
@@ -480,7 +480,7 @@ nnoremap <silent> <leader>q :q<CR>
 inoremap <silent> <leader>q <ESC>:q<CR>
 
 " create a new tab
-nnoremap <silent> <leader>t :tabnew<CR>
+" nnoremap <silent> <leader>t :tabnew<CR>
 
 " next/previous buffer navigation
 nnoremap <silent> <C-b> :bnext<CR>
@@ -556,9 +556,9 @@ noremap Y y$
 "nnoremap <C-s> :w<CR>
 
 " inverts paste mode
-nnoremap <silent> <leader>pp :set paste! paste?<CR>
+nnoremap <silent> <leader>p :set paste! paste?<CR>
 " same in insert mode
-set pastetoggle=<leader>pp
+set pastetoggle=<leader>p
 
 function! Preserve(command)
   let l:search=@/
