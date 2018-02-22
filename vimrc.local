@@ -38,6 +38,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -211,6 +212,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_config_file = ".vim"
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler_options = '-std=c++14'
+
+" vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+noremap <leader>i :IndentGuidesToggle<CR>
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
