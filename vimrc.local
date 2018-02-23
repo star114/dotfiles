@@ -39,10 +39,12 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+Plugin 'mhinz/vim-startify'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'dracula/vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -136,10 +138,10 @@ filetype plugin on
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
 
 " ag
 set runtimepath^=~/.vim/bundle/ag
@@ -214,19 +216,20 @@ let g:syntastic_cpp_config_file = ".vim"
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
-" vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
-noremap <leader>i :IndentGuidesToggle<CR>
+" indentLine
+let g:indentLine_enabled = 1
+noremap <leader>i :IndentLinesToggle<CR>
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
 if has("gui_running")
-   let s:uname = system("uname")
-   if s:uname == "Darwin\n"
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
-   endif
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+    endif
 endif
 "colorscheme desert
 "colorscheme peachpuff
 "colorscheme crayon
-colorscheme codedark
+"colorscheme codedark
+colorscheme dracula
