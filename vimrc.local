@@ -80,7 +80,7 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 set laststatus=2 " enable status bar when only single file is opened
 set ttimeoutlen=50
-let g:airline_theme='codedark'
+let g:airline_theme='dracula'
 
 " cscope
 if has("cscope") && executable("cscope") && (filereadable("/usr/local/bin/cscope") || filereadable("/usr/bin/cscope"))
