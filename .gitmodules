@@ -13,3 +13,15 @@
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "dracula/iterm"]
+	path = dracula/iterm
+	url = https://github.com/dracula/iterm.git
+[submodule "dracula/alfred"]
+	path = dracula/alfred
+	url = https://github.com/dracula/alfred
+[submodule "dracula/quiver"]
+	path = dracula/quiver
+	url = https://github.com/dracula/quiver
+[submodule "dracula/terminal-app"]
+	path = dracula/terminal-app
+	url = https://github.com/dracula/terminal-app.git
