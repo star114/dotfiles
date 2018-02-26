@@ -491,10 +491,10 @@ set whichwrap=b,s,<,> " allow cursor left/right key to wrap to the
                       " omit [,] as we use virtual edit in insert mode
 
 " disable arrow keys
-nnoremap <Left> :echo "arrow keys disabled, use h"<CR>
-nnoremap <Right> :echo "arrow keys disabled, use l"<CR>
-nnoremap <Up> :echo "arrow keys disabled, use k"<CR>
-nnoremap <Down> :echo "arrow keys disabled, use j"<CR>
+" nnoremap <Left> :echo "arrow keys disabled, use h"<CR>
+" nnoremap <Right> :echo "arrow keys disabled, use l"<CR>
+" nnoremap <Up> :echo "arrow keys disabled, use k"<CR>
+" nnoremap <Down> :echo "arrow keys disabled, use j"<CR>
 
 " move to the position where the last change was made
 noremap gI `.
