@@ -41,6 +41,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
+Plugin 'jlanzarotta/bufexplorer'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
