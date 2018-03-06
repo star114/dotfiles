@@ -556,9 +556,9 @@ noremap Y y$
 "nnoremap <C-s> :w<CR>
 
 " inverts paste mode
-nnoremap <silent> <leader>p :set paste! paste?<CR>
+nnoremap <silent> <leader>pp :set paste! paste?<CR>
 " same in insert mode
-set pastetoggle=<leader>p
+set pastetoggle=<leader>pp
 
 function! Preserve(command)
   let l:search=@/
@@ -588,17 +588,17 @@ noremap <silent> <leader>$ :call Preserve("%s/<C-V><CR>//e")<CR>
 " vnoremap <silent> <leader>c "_c
 
 " yank/paste to/from the OS clipboard
-" noremap <silent> <leader>y "+y
-" noremap <silent> <leader>Y "+Y
-" noremap <silent> <leader>p "+p
-" noremap <silent> <leader>P "+P
+noremap <silent> <leader>y "+y
+noremap <silent> <leader>Y "+Y
+noremap <silent> <leader>p "+p
+noremap <silent> <leader>P "+P
 
 " paste without yanking replaced text in visual mode
 vnoremap <silent> p "_dP
 vnoremap <silent> P "_dp
 
 " always share the OS clipboard
-" set clipboard+=unnamed
+set clipboard+=unnamed
 
 " autofix typos
 iabbrev teh the
