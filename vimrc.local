@@ -38,7 +38,7 @@ Plugin 'jremmen/vim-ripgrep'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
 Plugin 'jlanzarotta/bufexplorer'
@@ -203,19 +203,19 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 nmap <Leader>ca :ClangFormatAutoToggle<CR>
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " syntastic custom settings
-let g:syntastic_cpp_config_file = ".vim"
-let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+" let g:syntastic_cpp_config_file = ".vim"
+" let g:syntastic_cpp_remove_include_errors = 1
+" let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " indentLine
 let g:indentLine_enabled = 1
