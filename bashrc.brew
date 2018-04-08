@@ -18,6 +18,9 @@ export PATH=/usr/local/opt/qt/bin:$PATH
 #mono
 export MONO_GAC_PREFIX="/usr/local"
 
+#openssl
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
 #llvm
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 
