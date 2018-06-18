@@ -18,6 +18,7 @@
     ~/.inputrc: inputrc
     ~/.profile: profile
     ~/.screenrc: screenrc
+    ~/.shuttle.json: shuttle.json
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
     ~/tool: tool
