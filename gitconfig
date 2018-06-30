@@ -7,8 +7,9 @@
 	autocrlf = input
 	filemode = false
 	excludesfile = ~/.gitignore_global
+	ignorecase = true
 [user]
-	name = Shin Heesik
+	name = Heesik Shin
 	email = sinheesik@gmail.com
 [color]
 	ui = true
@@ -18,3 +19,10 @@
 	enabled = true
 [push]
 	default = matching
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[gitreview]
+	username = star114
