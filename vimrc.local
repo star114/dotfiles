@@ -41,6 +41,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'rizzatti/dash.vim'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -219,6 +220,9 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 " indentLine
 let g:indentLine_enabled = 1
 noremap <leader>i :IndentLinesToggle<CR>
+
+" dash
+:nmap <silent> <leader>d <Plug>DashGlobalSearch
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
