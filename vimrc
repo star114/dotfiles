@@ -160,7 +160,7 @@ if exists("+relativenumber")
   if v:version >= 400
     set number
   endif
-  set relativenumber  " show relative line numbers
+  " set relativenumber  " show relative line numbers
   set numberwidth=3   " narrow number column
   " cycles between relative / absolute / no numbering
   if v:version >= 400
@@ -395,7 +395,7 @@ endif
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
 
 " switch between last two files
-nnoremap <leader><Tab> <c-^>
+" nnoremap <leader><Tab> <c-^>
 
 " <leader>w writes the whole buffer to the current file
 nnoremap <silent> <leader>w :w!<CR>
