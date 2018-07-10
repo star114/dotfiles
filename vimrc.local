@@ -42,6 +42,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'rizzatti/dash.vim'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -220,6 +221,9 @@ nmap <Leader>ca :ClangFormatAutoToggle<CR>
 " indentLine
 let g:indentLine_enabled = 1
 noremap <leader>i :IndentLinesToggle<CR>
+
+" dash
+:nmap <silent> <leader>d <Plug>DashGlobalSearch
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10

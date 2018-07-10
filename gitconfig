@@ -1,14 +1,21 @@
 [alias]
 	lg = log --color --graph --abbrev-commit\n           --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'
 	cloner = clone --recursive
-	log = log --de
+	log = log --decoreate
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
 [core]
 	editor = vim
 	autocrlf = input
 	filemode = false
 	excludesfile = ~/.gitignore_global
+	ignorecase = true
 [user]
-	name = Shin Heesik
+	name = Heesik Shin
 	email = sinheesik@gmail.com
 [color]
 	ui = true
@@ -18,3 +25,10 @@
 	enabled = true
 [push]
 	default = matching
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[gitreview]
+	username = star114
