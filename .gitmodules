@@ -25,3 +25,6 @@
 [submodule "dracula/terminal-app"]
 	path = dracula/terminal-app
 	url = https://github.com/dracula/terminal-app.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
