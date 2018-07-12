@@ -3,6 +3,7 @@
     - [git submodule update --init --remote, Upgrading submodules]
     - [mkdir -p ~/.config]
     - [mkdir -p ~/.vim/bundle]
+    - [mkdir -p ~/.tmux/plugins]
 - link:
     ~/Brewfile: Brewfile
     ~/.bash: bash
@@ -18,7 +19,7 @@
     ~/.inputrc: inputrc
     ~/.profile: profile
     ~/.screenrc: screenrc
-    ~/.shuttle.json: shuttle.json
+    ~/.tmux/plugins/tpm : tmux/plugins/tpm
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
     ~/tool: tool
