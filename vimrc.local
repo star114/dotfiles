@@ -43,7 +43,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'rizzatti/dash.vim'
+" Plugin 'rizzatti/dash.vim'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
