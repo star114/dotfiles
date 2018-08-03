@@ -34,4 +34,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 #python2
-export PATH="/usr/local/opt/python@2/bin:$PATH"
+#export PATH="/usr/local/opt/python@2/bin:$PATH"
+
+#anaconda3
+export PATH=/usr/local/anaconda3/bin:"$PATH"

@@ -687,7 +687,6 @@ set wrapscan    " wrap around when searching
 set incsearch   " show match results while typing search pattern
 if (&t_Co > 2 || has("gui_running"))
   set hlsearch  " highlight search terms
-  highlight Search ctermfg=0 ctermbg=226 guifg=Black guibg=Yellow
 endif
 
 " temporarily disable highlighting when entering insert mode
