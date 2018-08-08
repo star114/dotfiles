@@ -39,3 +39,5 @@ fi
 if [ -f ~/.bashrc.spark ]; then
     source ~/.bashrc.spark
 fi
+
+[ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
