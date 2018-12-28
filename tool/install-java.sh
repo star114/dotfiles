@@ -21,8 +21,8 @@ mkdir -p ~/.jenv/versions/
 eval "$(jenv init -)"
 grep 'jenv()' ~/.bashrc.spark > /dev/null 2>&1 || echo "$(jenv init -)" >> ~/.bashrc.spark
 source ~/.bashrc.spark
-brew cask install caskroom/versions/java8
 brew cask install java
+brew cask install caskroom/versions/java8
 # Remove orphans or bad previous installs so we manage things from a clean state
 old_versions="$(jenv versions --bare)"
 for java_version in ${old_versions}; do
