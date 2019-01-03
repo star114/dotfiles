@@ -673,7 +673,16 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "right_control"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        }
+                    ]
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -686,7 +695,24 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": {
+                                "key_code": "mission_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_control"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        }
+                    ]
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -809,14 +835,6 @@
                     },
                     "to": {
                         "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "right_command"
-                    },
-                    "to": {
-                        "key_code": "launchpad"
                     }
                 },
                 {

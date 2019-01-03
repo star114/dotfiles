@@ -1,3 +1,6 @@
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 alias ls='ls --color'
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
@@ -34,10 +37,6 @@ fi
 
 if [ -f ~/.bashrc.fzf ]; then
     source ~/.bashrc.fzf
-fi
-
-if [ -f ~/.bashrc.spark ]; then
-    source ~/.bashrc.spark
 fi
 
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
