@@ -15,6 +15,69 @@
                 },
                 "rules": [
                     {
+                        "description": "Change button4 to back, button5 or left_option+button4 to forward",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change button3 to refresh",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button3"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "⌘ + ← | Move cursor to line begin",
                         "manipulators": [
                             {
@@ -723,7 +786,7 @@
                         "product_id": 1957,
                         "vendor_id": 1118
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": []
                 }
@@ -843,6 +906,14 @@
                     },
                     "to": {
                         "key_code": "f18"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_gui"
+                    },
+                    "to": {
+                        "key_code": "f1"
                     }
                 }
             ],

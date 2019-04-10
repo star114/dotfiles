@@ -121,9 +121,9 @@ endif
 cabbrev w!! w !sudo tee % >/dev/null
 
 " CTRL+A moves to start of line in command mode
-" cnoremap <C-e> <home>
+cnoremap <C-a> <home>
 " CTRL+E moves to end of line in command mode
-" cnoremap <C-e><C-e> <end>
+cnoremap <C-e> <end>
 
 " CTRL+C closes the command window
 if has("autocmd")
@@ -199,9 +199,11 @@ endif
 
 set nolist                            " hide unprintable characters
 if has("multi_byte")                  " if multi_byte is available,
-  set listchars=eol:¬,tab:▸\ ,trail:⌴ " use pretty Unicode unprintable symbols
+  set listchars=tab:▸\ ,trail:⌴       " use pretty Unicode unprintable symbols
+" eol:¬,
 else                                  " otherwise,
-  set listchars=eol:$,tab:>\ ,trail:. " use ASCII characters
+  set listchars=tab:>\ ,trail:.       " use ASCII characters
+" eol:$,
 endif
 
 " temporarily disable unprintable characters when entering insert mode
@@ -553,7 +555,7 @@ set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 noremap Y y$
 
 " CTRL-S saves file
-"nnoremap <C-s> :w<CR>
+nnoremap <C-s> :w<CR>
 
 " inverts paste mode
 nnoremap <silent> <leader>pp :set paste! paste?<CR>
