@@ -32,6 +32,7 @@
     ~/.fzf.sh: fzf.sh
     ~/.fzf: fzf
     ~/.oh-my-zsh/custom/plugins/alias-tips: alias-tips
+    ~/.oh-my-zsh/custom/plugins/zsh-interactive-cd: zsh-interactive-cd
     ~/.oh-my-zsh/custom/plugins/zsh-completions: zsh-completions
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
