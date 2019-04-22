@@ -69,12 +69,15 @@ export LD_LIBRARY_PATH
 # gcc colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# fzf path
+export FZF_BASE="~/.fzf"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx tmux git zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(osx tmux git gitignore mosh vundle vi-mode copyfile copydir fzf history iterm2 zsh-navigation-tools zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -115,6 +118,10 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
+if [ -f ~/.fzf.sh ]; then
+    source ~/.fzf.sh
+fi
+
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
 
 alias ls='ls --color'
@@ -123,3 +130,5 @@ if [ -f /usr/local/bin/gls ]; then
 fi
 alias l='ls -lah'
 alias h=history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
