@@ -118,6 +118,8 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
@@ -130,5 +132,3 @@ if [ -f /usr/local/bin/gls ]; then
 fi
 alias l='ls -lah'
 alias h=history
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

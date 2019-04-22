@@ -33,10 +33,10 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
-if [ -f ~/.bashrc.fzf ]; then
-    source ~/.bashrc.fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f ~/.fzf.sh ]; then
+    source ~/.fzf.sh
 fi
 
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
