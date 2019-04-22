@@ -49,3 +49,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "alias-tips"]
+	path = alias-tips
+	url = https://github.com/djui/alias-tips.git
