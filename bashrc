@@ -38,3 +38,5 @@ if [ -f ~/.bashrc.fzf ]; then
 fi
 
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

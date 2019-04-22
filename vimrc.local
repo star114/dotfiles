@@ -170,7 +170,6 @@ if executable('rg')
 endif
 
 " fzf
-set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 
 " Command for git grep

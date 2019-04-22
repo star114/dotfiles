@@ -12,7 +12,6 @@
     ~/.bash: bash
     ~/.bashrc: bashrc
     ~/.bashrc.brew: bashrc.brew
-    ~/.bashrc.fzf: bashrc.fzf
     ~/.bashrc.spark: bashrc.spark
     ~/.config/karabiner: config/karabiner
     ~/.gdbinit: gdbinit
@@ -30,6 +29,8 @@
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
     ~/.vim/bundle/Vundle.vim: Vundle.vim
+    ~/.fzf.sh: fzf.sh
+    ~/.fzf: fzf
     ~/.oh-my-zsh/custom/plugins/zsh-completions: zsh-completions
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
@@ -39,3 +40,5 @@
     ~/.zshrc:
         force: true
         path: zshrc
+- shell:
+    - [~/.fzf/install, Installing fzf]
