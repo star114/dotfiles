@@ -52,3 +52,9 @@
 [submodule "alias-tips"]
 	path = alias-tips
 	url = https://github.com/djui/alias-tips.git
+[submodule "zsh-interactive-cd"]
+	path = zsh-interactive-cd
+	url = https://github.com/changyuheng/zsh-interactive-cd.git
+[submodule "marker"]
+	path = marker
+	url = https://github.com/pindexis/marker

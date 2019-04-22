@@ -77,7 +77,7 @@ export FZF_BASE="~/.fzf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx tmux git gitignore mosh vundle vi-mode copyfile copydir fzf history iterm2 zsh-navigation-tools zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search alias-tips)
+plugins=(osx tmux git gitignore mosh vundle vi-mode copyfile copydir fzf history iterm2 zsh-navigation-tools zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search alias-tips zsh-interactive-cd)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -125,6 +125,8 @@ if [ -f ~/.fzf.sh ]; then
 fi
 
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
+
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 alias ls='ls --color'
 if [ -f /usr/local/bin/gls ]; then

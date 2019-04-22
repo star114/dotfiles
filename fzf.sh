@@ -78,6 +78,27 @@ cdf() {
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
+# interactive cd
+function cd() {
+    if [[ "$#" != 0 ]]; then
+        builtin cd "$@";
+        return
+    fi
+    while true; do
+        local lsd=$(echo ".." && ls -p | grep '/$' | sed 's;/$;;')
+        local dir="$(printf '%s\n' "${lsd[@]}" |
+            fzf --reverse --preview '
+                __cd_nxt="$(echo {})";
+                __cd_path="$(echo $(pwd)/${__cd_nxt} | sed "s;//;/;")";
+                echo $__cd_path;
+                echo;
+                ls -p --color=always "${__cd_path}";
+        ')"
+        [[ ${#dir} != 0 ]] || return 0
+        builtin cd "$dir" &> /dev/null
+    done
+}
+
 # fh - repeat history
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
@@ -203,6 +224,44 @@ ftags() {
   ) && ${EDITOR:-vim} $(cut -f3 <<< "$line") -c "set nocst" \
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
+
+# marker templete select
+_fzf_marker_main_widget() {
+  if echo "$BUFFER" | grep -q -P "{{"; then
+    _fzf_marker_placeholder
+  else
+    local selected
+    if selected=$(cat ${FZF_MARKER_CONF_DIR:-~/.config/marker}/*.txt |
+      sed -e "s/\(^[a-zA-Z0-9_-]\+\)\s/${FZF_MARKER_COMMAND_COLOR:-\x1b[38;5;255m}\1\x1b[0m /" \
+          -e "s/\s*\(#\+\)\(.*\)/${FZF_MARKER_COMMENT_COLOR:-\x1b[38;5;8m}  \1\2\x1b[0m/" |
+      fzf --bind 'tab:down,btab:up' --height=80% --ansi -q "$LBUFFER"); then
+      LBUFFER=$(echo $selected | sed 's/\s*#.*//')
+    fi
+    zle redisplay
+  fi
+}
+
+_fzf_marker_placeholder() {
+  local strp pos placeholder
+  strp=$(echo $BUFFER | grep -Z -P -b -o "\{\{[\w]+\}\}")
+  strp=$(echo "$strp" | head -1)
+  pos=$(echo $strp | cut -d ":" -f1)
+  placeholder=$(echo $strp | cut -d ":" -f2)
+  if [[ -n "$1" ]]; then
+    BUFFER=$(echo $BUFFER | sed -e "s/{{//" -e "s/}}//")
+    CURSOR=$(($pos + ${#placeholder} - 4))
+  else
+    BUFFER=$(echo $BUFFER | sed "s/$placeholder//")
+    CURSOR=pos
+  fi
+}
+
+_fzf_marker_placeholder_widget() { _fzf_marker_placeholder "defval" }
+
+zle -N _fzf_marker_main_widget
+zle -N _fzf_marker_placeholder_widget
+bindkey "${FZF_MARKER_MAIN_KEY:-\C-@}" _fzf_marker_main_widget
+bindkey "${FZF_MARKER_PLACEHOLDER_KEY:-\C-v}" _fzf_marker_placeholder_widget
 
 # tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
 # `tm` will allow you to select your tmux session via fzf.
