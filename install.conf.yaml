@@ -29,6 +29,7 @@
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
     ~/.vim/bundle/Vundle.vim: Vundle.vim
+    ~/.marker: marker
     ~/.fzf.sh: fzf.sh
     ~/.fzf: fzf
     ~/.oh-my-zsh/custom/plugins/alias-tips: alias-tips
@@ -45,3 +46,4 @@
         path: zshrc
 - shell:
     - [~/.fzf/install, Installing fzf]
+    - [~/.marker/install.py, Installing marker]
