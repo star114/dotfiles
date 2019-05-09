@@ -30,6 +30,7 @@
     ~/.vimrc.local: vimrc.local
     ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.marker: marker
+    ~/.fzf.marker: fzf.marker
     ~/.fzf.sh: fzf.sh
     ~/.fzf: fzf
     ~/.oh-my-zsh/custom/plugins/alias-tips: alias-tips

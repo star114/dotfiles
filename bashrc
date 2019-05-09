@@ -1,7 +1,6 @@
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-alias ls='ls --color'
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi

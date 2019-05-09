@@ -128,9 +128,15 @@ fi
 
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
-alias ls='ls --color'
+if [ -f ~/.fzf.marker ]; then
+    source ~/.fzf.marker
+fi
+
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi
 alias l='ls -lah'
 alias h=history
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
