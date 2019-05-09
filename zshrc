@@ -132,7 +132,6 @@ if [ -f ~/.fzf.marker ]; then
     source ~/.fzf.marker
 fi
 
-alias ls='ls'
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi
