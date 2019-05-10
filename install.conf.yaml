@@ -45,6 +45,7 @@
     ~/.zshrc:
         force: true
         path: zshrc
+    ~/.jenv: jenv
 - shell:
     - [~/.fzf/install, Installing fzf]
     - [~/.marker/install.py, Installing marker]
