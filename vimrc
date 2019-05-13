@@ -6,6 +6,20 @@ endif
 
 " -- bootstrap -----------------------------------------------------------------
 
+" mouse
+set mouse=a
+function! ToggleMouse()
+    " check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
+nnoremap <silent> <leader>m :call ToggleMouse()<CR>
+
 set encoding=utf-8  " set vim encoding to UTF-8
 set nocompatible    " the future is now, use vim defaults instead of vi ones
 set nomodeline      " disable mode lines (security measure)
