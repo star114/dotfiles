@@ -45,6 +45,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jlanzarotta/bufexplorer'
 " Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'whatyouhide/vim-lengthmatters'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
@@ -260,6 +261,7 @@ nmap <Leader>ca :ClangFormatAutoToggle<CR>
 
 " indentLine
 let g:indentLine_enabled = 1
+let g:indentLine_faster = 1
 noremap <leader>i :IndentLinesToggle<CR>
 
 " nerdcommenter
@@ -279,6 +281,8 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+
+noremap <leader>] :LengthmattersToggle<CR>
 
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
