@@ -18,8 +18,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Tree'
 Plugin 'ctags.vim'
-Plugin 'cscope.vim'
-Plugin 'chazy/cscope_maps'
+" Plugin 'cscope.vim'
+" Plugin 'chazy/cscope_maps'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Tagbar'
 Plugin 'AutoComplPop'
@@ -227,35 +227,34 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_concepts_highlight = 1
 " This will highlight the keywords concept and requires as well as all named requirements (like DefaultConstructible) in the standard library.
 " Highlighting of user defined functions can be disabled by
-" let g:cpp_no_function_highlight = 1
+let g:cpp_no_function_highlight = 1
 
 " vim-clang-format
 let g:clang_format#code_style = "WebKit"
 let g:clang_format#style_options = {
             \ "IndentCaseLabels" : "true",
-            \ "NamespaceIndentation" : "None",
-            \ "Standard" : "C++11"}
+            \ "NamespaceIndentation" : "None"}
 
-" map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" map to <Leader>[ in C++ code
+autocmd FileType h,c,cc,cpp,objc nnoremap <buffer><Leader>[ :<C-u>ClangFormat<CR>
+autocmd FileType h,c,cc,cpp,objc vnoremap <buffer><Leader>[ :ClangFormat<CR>
 " Toggle auto formatting:
-nmap <Leader>ca :ClangFormatAutoToggle<CR>
+nmap <Leader>cf :ClangFormatAutoToggle<CR>
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" syntastic custom settings
-let g:syntastic_cpp_config_file = ".vim"
-let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+" " syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
+" " syntastic custom settings
+" let g:syntastic_cpp_config_file = ".vim"
+" let g:syntastic_cpp_remove_include_errors = 1
+" let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " indentLine
 let g:indentLine_enabled = 1
@@ -280,6 +279,10 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+let g:lengthmatters_on_by_default = 0
+" let g:lengthmatters_highlight_one_column = 1
+let g:lengthmatters_start_at_column = 161
+let g:lengthmatters_use_textwidth = 0
 noremap <leader>] :LengthmattersToggle<CR>
 
 " scheme
