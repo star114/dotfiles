@@ -7,7 +7,7 @@ endif
 " -- bootstrap -----------------------------------------------------------------
 
 " mouse
-set mouse=a
+set mouse=
 function! ToggleMouse()
     " check if mouse is enabled
     if &mouse == 'a'
