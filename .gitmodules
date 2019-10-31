@@ -61,3 +61,6 @@
 [submodule "jenv"]
 	path = jenv
 	url = https://github.com/jenv/jenv.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git

@@ -46,6 +46,8 @@
         force: true
         path: zshrc
     ~/.jenv: jenv
+    ~/.fonts: fonts
 - shell:
     - [~/.fzf/install, Installing fzf]
     - [~/.marker/install.py, Installing marker]
+    - [~/.fonts/install.sh, Installing powerline fonts]
