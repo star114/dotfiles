@@ -1,4 +1,7 @@
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -22,25 +25,18 @@ fo() {
   fi
 }
 
-# fuzzy grep open via ag
+# fuzzy grep open via ag with line number
 vg() {
   local file
+  local line
 
-  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+  read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
 
   if [[ -n $file ]]
   then
-     vim $file
+     vim $file +$line
   fi
 }
-
-# fd - cd to selected directory
-#fd() {
-#  local dir
-#  dir=$(find ${1:-.} -path '*/\.*' -prune \
-#                  -o -type d -print 2> /dev/null | fzf +m) &&
-#  cd "$dir"
-#}
 
 # Another fd - cd into the selected directory
 # This one differs from the above, by only showing the sub directories and not
@@ -92,11 +88,18 @@ function cd() {
                 __cd_path="$(echo $(pwd)/${__cd_nxt} | sed "s;//;/;")";
                 echo $__cd_path;
                 echo;
-                ls -p --color=always "${__cd_path}";
+                ls -p "${__cd_path}";
         ')"
         [[ ${#dir} != 0 ]] || return 0
         builtin cd "$dir" &> /dev/null
     done
+}
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
 # fh - repeat history
@@ -122,24 +125,6 @@ fbr() {
   branch=$(echo "$branches" | fzf +m) &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
-
-# fbr - checkout git branch (including remote branches)
-#fbr() {
-#  local branches branch
-#  branches=$(git branch --all | grep -v HEAD) &&
-#  branch=$(echo "$branches" |
-#           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-#  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-#}
-
-# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-#fbr() {
-#  local branches branch
-#  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
-#  branch=$(echo "$branches" |
-#           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-#  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-#}
 
 # fco - checkout git branch/tag
 fco() {
@@ -176,44 +161,6 @@ fshow() {
 FZF-EOF"
 }
 
-# fcs - get git commit sha
-# example usage: git rebase -i `fcs`
-fcs() {
-  local commits commit
-  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
-  echo -n $(echo "$commit" | sed "s/ .*//")
-}
-
-# fstash - easier way to deal with stashes
-# type fstash to get a list of your stashes
-# enter shows you the contents of the stash
-# ctrl-d shows a diff of the stash against your current HEAD
-# ctrl-b checks the stash out as a branch, for easier merging
-fstash() {
-  local out q k sha
-  while out=$(
-    git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
-    fzf --ansi --no-sort --query="$q" --print-query \
-        --expect=ctrl-d,ctrl-b);
-  do
-    mapfile -t out <<< "$out"
-    q="${out[0]}"
-    k="${out[1]}"
-    sha="${out[-1]}"
-    sha="${sha%% *}"
-    [[ -z "$sha" ]] && continue
-    if [[ "$k" == 'ctrl-d' ]]; then
-      git diff $sha
-    elif [[ "$k" == 'ctrl-b' ]]; then
-      git stash branch "stash-$sha" $sha
-      break;
-    else
-      git stash show -p $sha
-    fi
-  done
-}
-
 # ftags - search ctags
 ftags() {
   local line
@@ -237,16 +184,6 @@ tm() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-# fs [FUZZY PATTERN] - Select selected tmux session
-#   - Bypass fuzzy finder if there's only one match (--select-1)
-#   - Exit if there's no match (--exit-0)
-fs() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --query="$1" --select-1 --exit-0) &&
-  tmux switch-client -t "$session"
-}
-
 # ftpane - switch pane (@george-b)
 ftpane() {
   local panes current_window current_pane target target_window target_pane
@@ -267,5 +204,11 @@ ftpane() {
   fi
 }
 
-# In tmux.conf
-# bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
+# v - open files in ~/.viminfo
+v() {
+  local files
+  files=$(grep '^>' ~/.viminfo | cut -c3- |
+          while read line; do
+            [ -f "${line/\~/$HOME}" ] && echo "$line"
+          done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
+}

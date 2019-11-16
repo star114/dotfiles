@@ -55,9 +55,6 @@
 [submodule "zsh-interactive-cd"]
 	path = zsh-interactive-cd
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
-[submodule "marker"]
-	path = marker
-	url = https://github.com/pindexis/marker
 [submodule "jenv"]
 	path = jenv
 	url = https://github.com/jenv/jenv.git
