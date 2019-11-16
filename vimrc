@@ -416,11 +416,11 @@ nnoremap <silent> <leader>W :wa!<CR>
 inoremap <silent> <leader>W <ESC>:wa!<CR>
 
 " custom key bindings
-nmap <leader>t :enew<cr>
-nmap <leader>l :bnext<CR>
-nmap <leader>h :bprevious<CR>
+" nmap <leader>t :enew<cr>
+" nmap <leader>l :bnext<CR>
+" nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>
+" nmap <leader>bl :ls<CR>
 
 " -- navigation ----------------------------------------------------------------
 
