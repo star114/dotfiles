@@ -134,12 +134,6 @@ fi
 
 [ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
 
-[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-
-if [ -f ~/.fzf.marker ]; then
-    source ~/.fzf.marker
-fi
-
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi
