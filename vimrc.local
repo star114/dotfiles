@@ -245,7 +245,7 @@ function! s:all_files()
   \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
 endfunction
 
-nnoremap <silent> <Leader>f :FZFMru<CR>
+nnoremap <silent> <Leader>r :FZFMru<CR>
 
 " tags
 function! s:tags_sink(line)
@@ -323,7 +323,7 @@ endfunction
 
 command! BTags call s:btags()
 
-nnoremap <silent> <Leader>h :BTags<CR>
+nnoremap <silent> <Leader>tt :BTags<CR>
 
 " search neighbours
 function! s:fzf_neighbouring_files()
@@ -361,6 +361,31 @@ nnoremap <silent> <Leader>C :call fzf#run({
 \   'options': '+m',
 \   'left':    30
 \ })<CR>
+
+" search line in all open vim buffers
+function! s:line_handler(l)
+  let keys = split(a:l, ':\t')
+  exec 'buf' keys[0]
+  exec keys[1]
+  normal! ^zz
+endfunction
+
+function! s:buffer_lines()
+  let res = []
+  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
+    call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
+  endfor
+  return res
+endfunction
+
+command! FZFLines call fzf#run({
+\   'source':  <sid>buffer_lines(),
+\   'sink':    function('<sid>line_handler'),
+\   'options': '--extended --nth=3..',
+\   'down':    '60%'
+\})
+
+nnoremap <silent> <Leader>f :FZFLines<CR>
 
 " c++ enhanced highlight
 let g:cpp_class_scope_highlight = 1
