@@ -85,10 +85,32 @@ export FZF_BASE="~/.fzf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx tmux git gitignore mosh vundle vi-mode copyfile copydir fzf history iterm2 zsh-navigation-tools zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search alias-tips zsh-interactive-cd)
+plugins=(osx tmux git gitignore mosh vundle vi-mode copyfile copydir fzf history iterm2 zsh-navigation-tools)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
+
+# zplug
+source ~/.zplug/init.zsh
+
+# Make sure to use double quotes
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "djui/alias-tips"
+zplug "changyuheng/zsh-interactive-cd"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # User configuration
 
