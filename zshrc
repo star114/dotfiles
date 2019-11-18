@@ -92,8 +92,6 @@ fi
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi
-alias l='ls -lah'
-alias h=history
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

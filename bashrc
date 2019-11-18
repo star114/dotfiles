@@ -4,12 +4,6 @@ export LC_ALL=en_US.UTF-8
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'
 fi
-alias l='ls -lah'
-alias h=history
-
-#git-aware-prompt
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
 
 #PS1='\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ '
 export CLICOLOR=1
@@ -23,10 +17,6 @@ export LD_LIBRARY_PATH
 
 # gcc colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-if [ -f /usr/local/bin/brew ]; then
-    [ -f ~/.bashrc.brew ] && source ~/.bashrc.brew
-fi
 
 if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
