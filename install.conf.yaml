@@ -4,9 +4,6 @@
     - [mkdir -p ~/.config]
     - [mkdir -p ~/.vim/bundle]
     - [mkdir -p ~/.tmux/plugins]
-    -
-      command: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
-      description: Installing oh-my-zsh
 - link:
     ~/Brewfile: Brewfile
     ~/.bash: bash
@@ -15,7 +12,6 @@
     ~/.bashrc.spark: bashrc.spark
     ~/.config/karabiner: config/karabiner
     ~/.gdbinit: gdbinit
-    ~/.gdbinit.dashboard: gdb-dashboard/.gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
@@ -31,20 +27,13 @@
     ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.fzf.sh: fzf.sh
     ~/.fzf: fzf
-    ~/.oh-my-zsh/custom/plugins/alias-tips: alias-tips
-    ~/.oh-my-zsh/custom/plugins/zsh-interactive-cd: zsh-interactive-cd
-    ~/.oh-my-zsh/custom/plugins/zsh-completions: zsh-completions
-    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
-    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
-    ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search: zsh-history-substring-search
-    ~/.oh-my-zsh/custom/themes/powerlevel9k: powerlevel9k
-    ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
     ~/.p10k.zsh: p10k.zsh
     ~/.zshrc.brew: zshrc.brew
     ~/.zshenv: zshenv
     ~/.zshrc:
         force: true
         path: zshrc
+    ~/.zplug: zplug
     ~/.jenv: jenv
     ~/.fonts: fonts
 - shell:

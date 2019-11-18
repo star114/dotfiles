@@ -7,9 +7,6 @@
 [submodule "MacOsSafariExtensions"]
 	path = MacOsSafariExtensions
 	url = https://github.com/star114/MacOsSafariExtensions.git
-[submodule "gdb-dashboard"]
-	path = gdb-dashboard
-	url = https://github.com/cyrus-and/gdb-dashboard.git
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -31,30 +28,12 @@
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = https://github.com/scmbreeze/scm_breeze.git
-[submodule "zsh-completions"]
-	path = zsh-completions
-	url = https://github.com/zsh-users/zsh-completions
-[submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh-history-substring-search"]
-	path = zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
 [submodule "powerlevel9k"]
 	path = powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "alias-tips"]
-	path = alias-tips
-	url = https://github.com/djui/alias-tips.git
-[submodule "zsh-interactive-cd"]
-	path = zsh-interactive-cd
-	url = https://github.com/changyuheng/zsh-interactive-cd.git
 [submodule "jenv"]
 	path = jenv
 	url = https://github.com/jenv/jenv.git
@@ -64,3 +43,6 @@
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug
