@@ -7,8 +7,6 @@
 - link:
     ~/Brewfile: Brewfile
     ~/.bashrc: bashrc
-    ~/.bashrc.brew: bashrc.brew
-    ~/.bashrc.spark: bashrc.spark
     ~/.config/karabiner: config/karabiner
     ~/.gdbinit: gdbinit
     ~/.gitconfig: gitconfig
