@@ -6,7 +6,6 @@
     - [mkdir -p ~/.tmux/plugins]
 - link:
     ~/Brewfile: Brewfile
-    ~/.bash: bash
     ~/.bashrc: bashrc
     ~/.bashrc.brew: bashrc.brew
     ~/.bashrc.spark: bashrc.spark
