@@ -1,12 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "bash/git-aware-prompt"]
-    path = bash/git-aware-prompt
-    url = https://github.com/star114/git-aware-prompt.git
-[submodule "MacOsSafariExtensions"]
-	path = MacOsSafariExtensions
-	url = https://github.com/star114/MacOsSafariExtensions.git
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -28,9 +22,6 @@
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = https://github.com/scmbreeze/scm_breeze.git
-[submodule "powerlevel9k"]
-	path = powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
@@ -40,9 +31,6 @@
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "powerlevel10k"]
-	path = powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "zplug"]
 	path = zplug
 	url = https://github.com/zplug/zplug
