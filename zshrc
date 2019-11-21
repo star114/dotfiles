@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# fzf path - need to forward declaration before plugins/fzf
+export FZF_BASE="~/.fzf"
+
 # zplug
 source ~/.zplug/init.zsh
 
@@ -73,9 +76,6 @@ fi
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
-
-# fzf path
-export FZF_BASE="~/.fzf"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
