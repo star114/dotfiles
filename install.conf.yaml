@@ -13,7 +13,6 @@
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
     ~/.profile: profile
-    ~/.scm_breeze: scm_breeze
     ~/.screenrc: screenrc
     ~/.tmux/plugins/tpm : tmux/plugins/tpm
     ~/.tmux.conf: tmux.conf
