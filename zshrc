@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# fzf path - need to forward declaration before plugins/fzf
+export FZF_BASE="~/.fzf"
+
 # zplug
 source ~/.zplug/init.zsh
 
@@ -26,20 +29,17 @@ zplug "plugins/gitignore", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/vundle", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/copyfile", from:oh-my-zsh
-zplug "plugins/copydir", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/iterm2", from:oh-my-zsh
 zplug "plugins/zsh-navigation-tools", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "djui/alias-tips"
 zplug "changyuheng/zsh-interactive-cd"
-zplug "hschne/fzf-git"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -54,8 +54,6 @@ zplug load # --verbose
 
 # User configuration
 
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=xterm-256color
 
 # local path
@@ -79,16 +77,11 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
-# fzf path
-export FZF_BASE="~/.fzf"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
-
-[ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
 
 if [ -f /usr/local/bin/gls ]; then
     alias ls='gls --color=auto'

@@ -28,7 +28,5 @@ if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
 
-[ -f ~/.scm_breeze/scm_breeze.sh ] && source ~/.scm_breeze/scm_breeze.sh
-
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

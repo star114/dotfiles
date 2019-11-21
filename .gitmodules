@@ -19,9 +19,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "scm_breeze"]
-	path = scm_breeze
-	url = https://github.com/scmbreeze/scm_breeze.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
