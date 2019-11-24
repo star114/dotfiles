@@ -44,6 +44,7 @@ Plugin 'jlanzarotta/bufexplorer'
 " Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'whatyouhide/vim-lengthmatters'
+Plugin 'kshenoy/vim-signature'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
