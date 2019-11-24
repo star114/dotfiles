@@ -83,10 +83,6 @@ if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
 
-if [ -f /usr/local/bin/gls ]; then
-    alias ls='gls --color=auto'
-fi
-
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
