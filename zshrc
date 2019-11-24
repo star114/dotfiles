@@ -34,6 +34,7 @@ zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/iterm2", from:oh-my-zsh
 zplug "plugins/zsh-navigation-tools", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
+zplug "plugins/jenv", from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -82,9 +83,6 @@ fi
 if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
