@@ -35,6 +35,7 @@ zplug "plugins/iterm2", from:oh-my-zsh
 zplug "plugins/zsh-navigation-tools", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/jenv", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
