@@ -37,6 +37,7 @@ zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/jenv", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/jump", from:oh-my-zsh
+zplug "plugins/tmuxinator", from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -58,6 +59,9 @@ zplug load # --verbose
 # User configuration
 
 export TERM=xterm-256color
+
+# editor
+export EDITOR='vim'
 
 # local path
 export PATH=/usr/local/bin:$PATH
