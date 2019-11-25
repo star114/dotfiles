@@ -58,7 +58,9 @@ zplug load # --verbose
 
 # User configuration
 
-export TERM=xterm-256color
+#export TERM=xterm-256color
+# for tmux
+export TERM=screen-256color
 
 # editor
 export EDITOR='vim'
