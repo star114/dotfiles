@@ -10,6 +10,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=screen-256color
 
+# editor
+export EDITOR='vim'
+
 # local path
 export PATH=/usr/local/bin:$PATH
 LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:"${LD_LIBRARY_PATH}"
