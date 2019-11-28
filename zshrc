@@ -44,6 +44,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "djui/alias-tips"
 zplug "changyuheng/zsh-interactive-cd"
+zplug 'wfxr/forgit', defer:1
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
