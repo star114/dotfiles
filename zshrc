@@ -13,8 +13,8 @@ source ~/.zplug/init.zsh
 
 # Make sure to use double quotes
 # themes
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1, defer:1
 
 # lib
 zplug "lib/completion", from:oh-my-zsh
