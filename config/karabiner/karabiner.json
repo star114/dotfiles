@@ -1002,6 +1002,14 @@
             "simple_modifications": [
                 {
                     "from": {
+                        "key_code": "right_gui"
+                    },
+                    "to": {
+                        "key_code": "f1"
+                    }
+                },
+                {
+                    "from": {
                         "key_code": "right_option"
                     },
                     "to": {
