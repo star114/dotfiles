@@ -223,3 +223,5 @@
     clean = git-lfs clean -- %f
 [gitreview]
     username = star114
+[credential]
+	helper = osxkeychain
