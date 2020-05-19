@@ -468,6 +468,10 @@ let g:lengthmatters_start_at_column = 161
 let g:lengthmatters_use_textwidth = 0
 noremap <leader>] :LengthmattersToggle<CR>
 
+" lcovviewer
+nnoremap <leader>c :source ~/.lcov/lcovviewer.vim<cr>
+nnoremap <leader>u :sign unplace *<cr>
+
 " scheme
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h10
 if has("gui_running")
