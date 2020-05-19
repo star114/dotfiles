@@ -4,10 +4,12 @@
     - [mkdir -p ~/.config]
     - [mkdir -p ~/.vim/bundle]
     - [mkdir -p ~/.tmux/plugins]
+    - [mkdir -p ~/.config/nvim]
 - link:
     ~/Brewfile: Brewfile
     ~/.bashrc: bashrc
     ~/.config/karabiner: config/karabiner
+    ~/.config/nvim/init.vim: vimrc
     ~/.gdbinit: gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
