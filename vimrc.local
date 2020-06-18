@@ -73,7 +73,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " airline
-let g:airline_theme = 'codedark'
+" let g:airline_theme = 'codedark'
+" let g:airline_theme = 'base16'
+" let g:airline_theme = 'bubblegum'
+" let g:airline_theme = 'deus'
+let g:airline_theme = 'angr'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -472,8 +476,9 @@ if has("gui_running")
 endif
 "colorscheme desert
 "colorscheme peachpuff
-colorscheme codedark
-hi Search ctermbg=Cyan
-hi Search ctermfg=Yellow
-"colorscheme dracula
+"colorscheme codedark
 "colorscheme brogrammer
+colorscheme dracula
+hi Search ctermbg=yellow ctermfg=black
+hi Normal ctermfg=grey ctermbg=black
+hi Comment ctermfg=darkgrey ctermbg=black
