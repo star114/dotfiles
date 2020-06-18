@@ -485,6 +485,6 @@ endif
 "colorscheme codedark
 "colorscheme brogrammer
 colorscheme dracula
-hi Search ctermbg=yellow ctermfg=black
-hi Normal ctermfg=grey ctermbg=black
-hi Comment ctermfg=darkgrey ctermbg=black
+hi Search ctermbg=yellow ctermfg=none
+hi Normal ctermfg=grey ctermbg=none
+hi Comment ctermfg=darkgrey ctermbg=none

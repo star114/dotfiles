@@ -45,7 +45,7 @@ tmux_conf_theme_24b_colour=true
 # window style
 tmux_conf_theme_window_fg='default'
 # tmux_conf_theme_window_bg='default'
-tmux_conf_theme_window_bg='#a9a9a9'                     # dark gray
+tmux_conf_theme_window_bg='#2B2D2F'                     # dark gray
 
 # highlight focused pane (tmux >= 2.1), possible values are:
 #   - true
