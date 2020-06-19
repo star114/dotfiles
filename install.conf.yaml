@@ -37,3 +37,5 @@
 - shell:
     - [~/.fzf/install, Installing fzf]
     - [~/.fonts/install.sh, Installing powerline fonts]
+# install nvim
+# pip3 install pynvim
