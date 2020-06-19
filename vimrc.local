@@ -45,7 +45,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'whatyouhide/vim-lengthmatters'
 Plugin 'kshenoy/vim-signature'
-Plugin 'TaDaa/vimade'
+" Plugin 'TaDaa/vimade'
 
 " vim scheme
 Plugin 'tomasiser/vim-code-dark'
