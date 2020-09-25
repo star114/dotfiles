@@ -112,3 +112,10 @@ uninstall() {
 
 # alias ls='ls --color=auto'
 alias ls='ls -G'
+
+# openjdk
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+# groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
