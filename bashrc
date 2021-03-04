@@ -30,6 +30,3 @@ fi
 if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"

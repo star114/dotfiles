@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # fzf path - need to forward declaration before plugins/fzf
 export FZF_BASE="~/.fzf"
 
@@ -14,7 +7,6 @@ source ~/.zplug/init.zsh
 # Make sure to use double quotes
 # themes
 # zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug "romkatv/powerlevel10k", as:theme, depth:1, defer:1
 
 # lib
 zplug "lib/completion", from:oh-my-zsh
@@ -59,9 +51,6 @@ zplug load # --verbose
 
 # User configuration
 
-#PS1='\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ '
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
 #export TERM=xterm-256color
 # for tmux
 export TERM=screen-256color
@@ -82,10 +71,6 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-if [ -f /usr/local/bin/brew ]; then
-    [ -f ~/.zshrc.brew ] && source ~/.zshrc.brew
-fi
-
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
@@ -96,16 +81,7 @@ if [ -f ~/.fzf.sh ]; then
     source ~/.fzf.sh
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Turn off all beeps
 unsetopt BEEP
 # Turn off autocomplete beeps
 unsetopt LIST_BEEP
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/star114/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/star114/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/star114/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/star114/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

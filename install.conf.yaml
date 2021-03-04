@@ -6,33 +6,21 @@
     - [mkdir -p ~/.tmux/plugins]
     - [mkdir -p ~/.config/nvim]
 - link:
-    ~/Brewfile: Brewfile
     ~/.bashrc: bashrc
-    ~/.config/karabiner: config/karabiner
     ~/.config/nvim/init.vim: vimrc
     ~/.gdbinit: gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.inputrc: inputrc
-    ~/.profile: profile
-    ~/.screenrc: screenrc
     ~/.tmux/plugins/tpm : tmux/plugins/tpm
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
-    ~/tool: tool
     ~/.vimrc: vimrc
     ~/.vimrc.local: vimrc.local
     ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.fzf.sh: fzf.sh
     ~/.fzf: fzf
-    ~/.p10k.zsh: p10k.zsh
-    ~/.zshrc.brew: zshrc.brew
-    ~/.zshenv: zshenv
-    ~/.zshrc:
-        force: true
-        path: zshrc
+    ~/.zshrc: zshrc
     ~/.zplug: zplug
-    ~/.jenv: jenv
     ~/.fonts: fonts
 - shell:
     - [~/.fzf/install, Installing fzf]
