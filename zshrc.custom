@@ -1,0 +1,40 @@
+# User configuration
+
+#export TERM=xterm-256color
+# for tmux
+export TERM=screen-256color
+
+# editor
+export EDITOR='vim'
+
+# local path
+export PATH=/usr/local/bin:$PATH
+LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:"${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH
+
+# gcc colors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# colorful ls
+alias ls='ls -G'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -f ~/.fzf.sh ]; then
+    source ~/.fzf.sh
+fi
+
+# Turn off all beeps
+unsetopt BEEP
+# Turn off autocomplete beeps
+unsetopt LIST_BEEP
+
+# local configuration
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
