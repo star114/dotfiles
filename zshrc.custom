@@ -23,18 +23,7 @@ export LC_ALL=en_US.UTF-8
 # colorful ls
 alias ls='ls -G'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [ -f ~/.fzf.sh ]; then
-    source ~/.fzf.sh
-fi
-
 # Turn off all beeps
 unsetopt BEEP
 # Turn off autocomplete beeps
 unsetopt LIST_BEEP
-
-# local configuration
-if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi

@@ -5,14 +5,12 @@
     - [mkdir -p ~/.vim/bundle]
     - [mkdir -p ~/.tmux/plugins]
     - [mkdir -p ~/.config/nvim]
-    - [mkdir -p ~/.zsh]
 - link:
     ~/.bashrc: bashrc
     ~/.config/nvim/init.vim: vimrc
     ~/.gdbinit: gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.zsh/pure: pure
     ~/.tmux/plugins/tpm : tmux/plugins/tpm
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
